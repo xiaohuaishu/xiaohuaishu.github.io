@@ -3,627 +3,478 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>刘伟 - 个人主页</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>刘伟 - 大语言模型与智能体专家</title>
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
-        :root {
-            --bg-primary: #f5f5f5;
-            --bg-white: #ffffff;
-            --text-primary: #333333;
-            --text-secondary: #666666;
-            --text-muted: #999999;
-            --border: #e0e0e0;
-            --accent: #2563eb;
-            --accent-light: #3b82f6;
-        }
-
+        
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #ffffff;
+            color: #333;
             line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 40px 20px;
         }
-
-        /* Header */
-        header {
-            background: var(--bg-white);
-            border-bottom: 1px solid var(--border);
-            padding: 20px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
+        
+        .nav {
+            text-align: right;
+            margin-bottom: 30px;
         }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .name {
-            font-size: 1.4rem;
-            font-weight: 600;
-            color: var(--text-primary);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: var(--text-secondary);
+        
+        .nav a {
+            color: #555;
             text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: color 0.2s;
+            margin-left: 25px;
+            font-size: 14px;
         }
-
-        .nav-links a:hover {
-            color: var(--accent);
+        
+        .nav a:hover {
+            color: #1a1a1a;
         }
-
-        /* Hero Section */
+        
         .hero {
-            background: var(--bg-white);
-            padding: 60px 0;
-            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: flex-start;
+            gap: 30px;
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #e5e5e5;
         }
-
-        .hero-content {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        .profile-img {
+        
+        .photo {
             width: 200px;
             height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .photo img {
+            width: 100%;
+            height: 100%;
             object-fit: cover;
-            border-radius: 8px;
         }
-
-        .hero-info h1 {
-            font-size: 2rem;
-            font-weight: 700;
+        
+        .hero-content {
+            flex: 1;
+        }
+        
+        .hero h1 {
+            font-size: 32px;
             margin-bottom: 10px;
+            color: #1a1a1a;
         }
-
-        .title {
-            font-size: 1.1rem;
-            color: var(--text-secondary);
+        
+        .hero .subtitle {
+            font-size: 16px;
+            color: #666;
             margin-bottom: 20px;
         }
-
-        .quick-links {
-            display: flex;
-            gap: 15px;
+        
+        .hero-links {
             margin-bottom: 20px;
         }
-
-        .quick-link {
-            color: var(--accent);
+        
+        .hero-links a {
+            color: #2563eb;
             text-decoration: none;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            margin-right: 20px;
+            font-size: 14px;
         }
-
-        .quick-link:hover {
+        
+        .hero-links a:hover {
             text-decoration: underline;
         }
-
+        
         .tags {
             display: flex;
             flex-wrap: wrap;
             gap: 8px;
         }
-
+        
         .tag {
-            background: #f0f7ff;
-            color: var(--accent);
-            padding: 4px 10px;
+            background: #f5f5f5;
+            padding: 5px 12px;
             border-radius: 4px;
-            font-size: 0.85rem;
+            font-size: 12px;
+            color: #666;
         }
-
-        /* Section */
+        
         .section {
-            padding: 50px 0;
+            margin-bottom: 35px;
         }
-
+        
         .section-title {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 25px;
+            font-size: 20px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
             padding-bottom: 10px;
-            border-bottom: 2px solid var(--border);
+            border-bottom: 2px solid #1a1a1a;
         }
-
-        /* Experience Timeline */
-        .timeline {
+        
+        .experience-item {
+            margin-bottom: 18px;
+        }
+        
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        
+        .experience-company {
+            font-size: 16px;
+            color: #1a1a1a;
+        }
+        
+        .experience-time {
+            font-size: 14px;
+            color: #888;
+            font-weight: 400;
+        }
+        
+        .experience-role {
+            font-size: 14px;
+            color: #555;
+            margin-top: 4px;
+        }
+        
+        .research-card {
+            background: #fafafa;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 6px;
+        }
+        
+        .research-card h3 {
+            font-size: 16px;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+        }
+        
+        .research-card p {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 12px;
+        }
+        
+        .paper-list {
+            list-style: none;
+        }
+        
+        .paper-list li {
+            font-size: 13px;
+            color: #444;
+            padding-left: 18px;
             position: relative;
-            padding-left: 20px;
-            border-left: 2px solid var(--border);
+            margin-bottom: 8px;
         }
-
-        .timeline-item {
-            margin-bottom: 25px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
+        
+        .paper-list li::before {
+            content: "•";
             position: absolute;
-            left: -26px;
-            top: 5px;
-            width: 10px;
-            height: 10px;
-            background: var(--accent);
-            border-radius: 50%;
+            left: 0;
+            color: #888;
         }
-
-        .timeline-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-            color: var(--text-primary);
+        
+        .paper-list li strong {
+            color: #1a1a1a;
         }
-
-        .timeline-item .date {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-            margin-bottom: 8px;
-        }
-
-        .timeline-item p {
-            color: var(--text-secondary);
-            font-size: 0.95rem;
-        }
-
-        /* Research Areas */
-        .research-grid {
+        
+        .grid-2 {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
         }
-
-        .research-item {
-            background: var(--bg-white);
-            padding: 20px;
+        
+        .card {
+            background: #fafafa;
+            padding: 18px;
             border-radius: 6px;
-            border: 1px solid var(--border);
         }
-
-        .research-item h4 {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            color: var(--text-primary);
-            display: flex;
-            align-items: center;
-            gap: 8px;
+        
+        .card h3 {
+            font-size: 15px;
+            color: #1a1a1a;
+            margin-bottom: 12px;
         }
-
-        .research-item p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.6;
+        
+        .card ul {
+            list-style: none;
         }
-
-        /* Publications */
-        .pub-list {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .pub-item {
-            background: var(--bg-white);
-            padding: 20px;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-        }
-
-        .pub-item h4 {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            color: var(--text-primary);
-            line-height: 1.5;
-            font-weight: 600;
-        }
-
-        .pub-meta {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .pub-tag {
-            background: #f0f7ff;
-            color: var(--accent);
-            padding: 2px 8px;
-            border-radius: 3px;
-            font-size: 0.8rem;
-        }
-
-        .pub-desc {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
-            line-height: 1.6;
-        }
-
-        /* Awards & Stats */
-        .awards-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .award-card {
-            background: var(--bg-white);
-            padding: 20px;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-        }
-
-        .award-card h4 {
-            font-size: 1rem;
+        
+        .card li {
+            font-size: 13px;
+            color: #555;
             margin-bottom: 8px;
-            color: var(--text-primary);
+            padding-left: 16px;
+            position: relative;
         }
-
-        .award-card p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
+        
+        .card li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #888;
+            font-size: 12px;
         }
-
-        /* Media */
-        .media-list {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .media-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-            padding: 15px;
-            background: var(--bg-white);
-            border-radius: 6px;
-            border: 1px solid var(--border);
-        }
-
-        .media-item h4 {
-            font-size: 0.95rem;
-            margin-bottom: 5px;
-            color: var(--text-primary);
-            flex: 1;
-        }
-
-        .media-item .source {
-            color: var(--text-muted);
-            font-size: 0.8rem;
-            white-space: nowrap;
-        }
-
-        .media-item .media-link {
-            color: var(--accent);
-            text-decoration: none;
-            font-size: 0.85rem;
-            white-space: nowrap;
-        }
-
-        /* Roles */
-        .roles-list {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .role-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--bg-white);
+        
+        .media-card {
+            background: #fafafa;
             padding: 15px;
             border-radius: 6px;
-            border: 1px solid var(--border);
+            margin-bottom: 10px;
         }
-
-        .role-item h4 {
-            font-size: 0.95rem;
-            color: var(--text-primary);
+        
+        .media-card h4 {
+            font-size: 14px;
+            color: #1a1a1a;
+            margin-bottom: 6px;
         }
-
-        .role-item p {
-            color: var(--text-muted);
-            font-size: 0.85rem;
+        
+        .media-card p {
+            font-size: 12px;
+            color: #666;
         }
-
-        /* Contact */
-        .contact-grid {
+        
+        .contact-info {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .contact-item {
+            gap: 15px;
             text-align: center;
-            background: var(--bg-white);
-            padding: 20px;
-            border-radius: 6px;
-            border: 1px solid var(--border);
         }
-
-        .contact-item h4 {
-            font-size: 1rem;
-            margin-bottom: 10px;
-            color: var(--text-primary);
-        }
-
+        
         .contact-item a {
-            color: var(--accent);
+            display: block;
+            color: #2563eb;
             text-decoration: none;
-            font-size: 0.9rem;
+            font-size: 14px;
         }
-
-        /* Footer */
-        footer {
-            background: var(--bg-white);
-            border-top: 1px solid var(--border);
-            padding: 30px 0;
-            text-align: center;
+        
+        .contact-item a:hover {
+            text-decoration: underline;
         }
-
-        footer p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
-        }
-
-        /* Responsive */
+        
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .hero-content {
-                grid-template-columns: 1fr;
+            .hero {
+                flex-direction: column;
                 text-align: center;
             }
-
-            .profile-img {
-                margin: 0 auto 20px;
+            
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
-
-            .quick-links, .tags {
+            
+            .hero-links {
                 justify-content: center;
             }
-
-            .research-grid, .awards-grid, .roles-list, .contact-grid {
+            
+            .tags {
+                justify-content: center;
+            }
+            
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="container header-content">
-            <div class="name">刘伟</div>
-            <ul class="nav-links">
-                <li><a href="#experience">经历</a></li>
-                <li><a href="#research">研究</a></li>
-                <li><a href="#publications">论文</a></li>
-                <li><a href="#awards">荣誉</a></li>
-                <li><a href="#contact">联系</a></li>
-            </ul>
+    <nav class="nav">
+        <a href="#experience">工作经历</a>
+        <a href="#research">研究方向</a>
+        <a href="#papers">论文成果</a>
+        <a href="#contact">联系方式</a>
+    </nav>
+    
+    <header class="hero">
+        <div class="photo">
+            <img src="20250718-164913.jpg" alt="刘伟">
+        </div>
+        <div class="hero-content">
+            <h1>刘伟</h1>
+            <p class="subtitle">小米大模型智能体负责人 | 人机对话与大模型专家</p>
+            <div class="hero-links">
+                <a href="mailto:buptliuwei@gmail.com">buptliuwei@gmail.com</a>
+                <a href="https://scholar.google.com/citations?user=oTP5ZpcAAAAJ" target="_blank">Google Scholar</a>
+                <a href="https://xiaohuaishu.github.io/" target="_blank">GitHub</a>
+            </div>
+            <div class="tags">
+                <span class="tag">大模型预训练</span>
+                <span class="tag">智能体系统</span>
+                <span class="tag">人机对话</span>
+                <span class="tag">微软小冰初创成员</span>
+            </div>
         </div>
     </header>
-
-    <section class="hero">
-        <div class="container hero-content">
-            <img src="https://space.coze.cn/s/JGl8v_jMZyc/?width_height=1500x1500" alt="刘伟" class="profile-img">
-            <div class="hero-info">
-                <h1>刘伟</h1>
-                <p class="title">小米大模型智能体负责人 | 人机对话与大模型专家</p>
-                <div class="quick-links">
-                    <a href="mailto:buptliuwei@gmail.com" class="quick-link"><i class="fas fa-envelope"></i> 邮箱</a>
-                    <a href="https://scholar.google.com/citations?user=oTP5ZpcAAAAJ" target="_blank" class="quick-link"><i class="fas fa-graduation-cap"></i> Google Scholar</a>
-                    <a href="https://xiaohuaishu.github.io/" target="_blank" class="quick-link"><i class="fab fa-github"></i> GitHub</a>
-                </div>
-                <div class="tags">
-                    <span class="tag">大模型预训练</span>
-                    <span class="tag">智能体系统</span>
-                    <span class="tag">人机对话</span>
-                    <span class="tag">微软小冰初创成员</span>
-                </div>
+    
+    <section class="section" id="experience">
+        <h2 class="section-title">工作经历</h2>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <span class="experience-company">小米大模型智能体负责人</span>
+                <span class="experience-time">2025 - 至今</span>
+            </div>
+        </div>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <span class="experience-company">小米大模型团队</span>
+                <span class="experience-time">2023 - 2025</span>
+            </div>
+            <div class="experience-role">预训练负责人</div>
+        </div>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <span class="experience-company">小米AI实验室</span>
+                <span class="experience-time">2020 - 2023</span>
+            </div>
+            <div class="experience-role">对话系统负责人</div>
+        </div>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <span class="experience-company">微软小冰团队</span>
+                <span class="experience-time">2015 - 2020</span>
+            </div>
+            <div class="experience-role">初创成员，闲聊对话研发</div>
+        </div>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <span class="experience-company">微软必应搜索团队</span>
+                <span class="experience-time">2013 - 2015</span>
+            </div>
+            <div class="experience-role">网页理解算法</div>
+        </div>
+        
+        <div class="experience-item">
+            <div class="experience-header">
+                <span class="experience-company">北京邮电大学</span>
+                <span class="experience-time">2013</span>
+            </div>
+            <div class="experience-role">本硕毕业</div>
+        </div>
+    </section>
+    
+    <section class="section" id="research">
+        <h2 class="section-title">研究方向与论文</h2>
+        
+        <div class="research-card">
+            <h3>智能体系统</h3>
+            <p>大模型驱动的AI Agent架构、规划推理、工具调用</p>
+            <ul class="paper-list">
+                <li><strong>ReachAgent</strong>: Enhancing Mobile Agent via Page Reaching and Page Operation (NAACL 2025)</li>
+                <li><strong>ToolPlanner</strong>: A Tool Augmented LLM for Multi Granularity Instructions with Path Planning and Feedback (EMNLP 2024)</li>
+            </ul>
+        </div>
+        
+        <div class="research-card">
+            <h3>大语言模型</h3>
+            <p>预训练优化、推理加速、位置编码</p>
+            <ul class="paper-list">
+                <li><strong>HoPE</strong>: A Novel Positional Encoding Without Long-Term Decay for Enhanced Context Awareness and Extrapolation (ACL 2025)</li>
+                <li><strong>TailorKV</strong>: A Hybrid Framework for Long-Context Inference via Tailored KV Cache Optimization (ACL 2025)</li>
+            </ul>
+        </div>
+        
+        <div class="research-card">
+            <h3>人机对话</h3>
+            <p>情感计算、上下文理解、多轮交互策略</p>
+            <ul class="paper-list">
+                <li>（待补充更多论文）</li>
+            </ul>
+        </div>
+        
+        <div class="research-card">
+            <h3>GUI Agent</h3>
+            <p>移动端界面理解、任务拆解与执行</p>
+            <ul class="paper-list">
+                <li><strong>MobileVLM</strong>: A Vision-Language Model for Better Intra- and Inter-UI Understanding (EMNLP 2024)</li>
+            </ul>
+        </div>
+    </section>
+    
+    <section class="section">
+        <h2 class="section-title">荣誉与职务</h2>
+        
+        <div class="grid-2">
+            <div class="card">
+                <h3>荣誉奖项</h3>
+                <ul>
+                    <li>小米百万美金技术大奖 (2023)</li>
+                    <li>CCF计算机应用创新技术一等奖 (2024)</li>
+                    <li>数博会优秀科技成果奖 (2024)</li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h3>学术与社会职务</h3>
+                <ul>
+                    <li>CCF YOCSEF总部学术委员</li>
+                    <li>CCF大模型论坛执委</li>
+                    <li>北大心理与认知科学学院硕士导师</li>
+                    <li>北邮101拔尖班企业导师</li>
+                </ul>
             </div>
         </div>
     </section>
-
-    <div class="container">
-        <section id="experience" class="section">
-            <h2 class="section-title">工作经历</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <h4>小米大模型智能体负责人</h4>
-                    <div class="date">2025 - 至今</div>
-                    <p>负责大模型智能体方向的研究与应用落地</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>小米大模型团队</h4>
-                    <div class="date">2023 - 2025</div>
-                    <p>负责大语言模型预训练工作</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>小米 AI 实验室</h4>
-                    <div class="date">2020 - 2023</div>
-                    <p>负责闲聊对话研究和应用，主导小爱同学对话系统研发</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>微软小冰团队</h4>
-                    <div class="date">2015 - 2020</div>
-                    <p>初创成员，从事闲聊对话研究与落地应用</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>微软必应搜索团队</h4>
-                    <div class="date">2013 - 2015</div>
-                    <p>网页理解算法工程师</p>
-                </div>
-                <div class="timeline-item">
-                    <h4>北京邮电大学</h4>
-                    <div class="date">2013</div>
-                    <p>本硕毕业</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="research" class="section">
-            <h2 class="section-title">研究方向</h2>
-            <div class="research-grid">
-                <div class="research-item">
-                    <h4><i class="fas fa-robot"></i> 智能体系统</h4>
-                    <p>研究大模型驱动的 AI Agent 架构，包括规划、推理、工具调用、多模态交互。探索智能手机 + AI Agent 的未来形态。</p>
-                </div>
-                <div class="research-item">
-                    <h4><i class="fas fa-brain"></i> 大语言模型</h4>
-                    <p>专注于大语言模型的预训练、微调、推理优化。在位置编码、KV Cache 压缩、长上下文处理等方面开展前沿研究。</p>
-                </div>
-                <div class="research-item">
-                    <h4><i class="fas fa-comments"></i> 人机对话</h4>
-                    <p>超过10年人机对话研究经验，从闲聊对话到任务型对话，探索对话系统的理解、生成、评估等关键问题。</p>
-                </div>
-                <div class="research-item">
-                    <h4><i class="fas fa-mobile-alt"></i> GUI Agent</h4>
-                    <p>研究移动端 GUI Agent，构建页面到达与操作两阶段框架，提升 Agent 在复杂界面中的任务完成能力。</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="publications" class="section">
-            <h2 class="section-title">代表性论文</h2>
-            <div class="pub-list">
-                <div class="pub-item">
-                    <h4>ReachAgent: Enhancing Mobile Agent via Page Reaching and Page Operation</h4>
-                    <div class="pub-meta">
-                        <span class="pub-tag">NAACL 2025</span>
-                        <span class="pub-tag">主会长文</span>
-                    </div>
-                    <p class="pub-desc">提出两阶段框架，将手机控制任务拆分为页面到达和操作子任务，任务级别准确率提升 4.72%。</p>
-                </div>
-                <div class="pub-item">
-                    <h4>Multilingual Machine Translation with Open Large Language Models at Practical Scale: An Empirical Study</h4>
-                    <div class="pub-meta">
-                        <span class="pub-tag">NAACL 2025</span>
-                        <span class="pub-tag">主会长文</span>
-                    </div>
-                    <p class="pub-desc">提出 PFMS 训练策略，GemmaX2-28 模型翻译性能达到 GPT-4 Turbo 水平。</p>
-                </div>
-                <div class="pub-item">
-                    <h4>HoPE: A Novel Positional Encoding Without Long-Term Decay for Enhanced Context Awareness and Extrapolation</h4>
-                    <div class="pub-meta">
-                        <span class="pub-tag">ACL 2025</span>
-                        <span class="pub-tag">主会长文</span>
-                    </div>
-                    <p class="pub-desc">提出高频旋转位置编码，打破长期衰减限制，提升模型上下文感知能力。</p>
-                </div>
-                <div class="pub-item">
-                    <h4>TailorKV: A Hybrid Framework for Long-Context Inference via Tailored KV Cache Optimization</h4>
-                    <div class="pub-meta">
-                        <span class="pub-tag">ACL 2025</span>
-                        <span class="pub-tag">Findings 长文</span>
-                    </div>
-                    <p class="pub-desc">提出混合压缩方法，128k 上下文模型可在单个 RTX 3090 GPU 上部署。</p>
-                </div>
-                <div class="pub-item">
-                    <h4>ToolPlanner: A Tool Augmented LLM for Multi Granularity Instructions with Path Planning and Feedback</h4>
-                    <div class="pub-meta">
-                        <span class="pub-tag">EMNLP 2024</span>
-                        <span class="pub-tag">主会长文</span>
-                    </div>
-                    <p class="pub-desc">提出两阶段强化学习框架，匹配率提升 26.8%。</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="awards" class="section">
-            <h2 class="section-title">荣誉与职务</h2>
-            <div class="awards-grid">
-                <div class="award-card">
-                    <h4>学术荣誉</h4>
-                    <p>• 2023 小米百万美金技术大奖<br>• 2024 CCF 计算机应用创新技术一等奖<br>• 2024 数博会优秀科技成果奖</p>
-                </div>
-                <div class="award-card">
-                    <h4>社会职务</h4>
-                    <p>• CCF YOCSEF 总部学术委员<br>• CCF 大模型论坛执委<br>• 北大心理与认知科学学院硕士导师<br>• 北邮 101 拔尖班企业导师</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 class="section-title">媒体报道</h2>
-            <div class="media-list">
-                <div class="media-item">
-                    <h4>小米大模型团队 2 篇论文被 NAACL 2025 录用</h4>
-                    <div class="source">小米技术</div>
-                    <a href="https://blog.csdn.net/pengzhouzhou/article/details/145561997" target="_blank" class="media-link">阅读原文</a>
-                </div>
-                <div class="media-item">
-                    <h4>ACL 2025 | 小米10篇大模型论文上新</h4>
-                    <div class="source">小米技术</div>
-                    <a href="https://blog.csdn.net/pengzhouzhou/article/details/148078026" target="_blank" class="media-link">阅读原文</a>
-                </div>
-                <div class="media-item">
-                    <h4>YEF2024 | "大模型时代AI Agent的挑战、优化与落地之道"</h4>
-                    <div class="source">CCF YOCSEF</div>
-                    <a href="https://www.ccf.org.cn/Media_list/YEF/2024-04-28/820895.shtml" target="_blank" class="media-link">阅读原文</a>
-                </div>
-                <div class="media-item">
-                    <h4>就业升学难？专家来支招</h4>
-                    <div class="source">CCF YOCSEF 保定</div>
-                    <a href="https://www.ccf.org.cn/YOCSEF/Branches/Baoding/News/lt/2025-03-30/840863.shtml" target="_blank" class="media-link">阅读原文</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <h2 class="section-title">联系方式</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <h4>邮箱</h4>
-                    <a href="mailto:buptliuwei@gmail.com">buptliuwei@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <h4>Google Scholar</h4>
-                    <a href="https://scholar.google.com/citations?user=oTP5ZpcAAAAJ" target="_blank">查看学术成果</a>
-                </div>
-                <div class="contact-item">
-                    <h4>GitHub</h4>
-                    <a href="https://xiaohuaishu.github.io/" target="_blank">查看代码仓库</a>
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 刘伟. All rights reserved.</p>
+    
+    <section class="section">
+        <h2 class="section-title">媒体报道</h2>
+        
+        <div class="media-card">
+            <h4>YEF2024大模型技术论坛执行主席</h4>
+            <p>组织"大模型时代AI Agent的挑战、优化与落地之道"技术论坛</p>
         </div>
+        
+        <div class="media-card">
+            <h4>腾冲科学家论坛发言</h4>
+            <p>分享"人机协同智能"理念，推动AI+未来发展方向</p>
+        </div>
+        
+        <div class="media-card">
+            <h4>CCF YOCSEF人才培养论坛</h4>
+            <p>分享《从24校招看学校培养和企业需求的GAP》</p>
+        </div>
+        
+        <div class="media-card">
+            <h4>小米技术博客报道</h4>
+            <p>多篇论文被ACL、NAACL、EMNLP等顶级会议录用</p>
+        </div>
+    </section>
+    
+    <section class="section" id="contact">
+        <h2 class="section-title">联系方式</h2>
+        
+        <div class="contact-info">
+            <div class="contact-item">
+                <a href="mailto:buptliuwei@gmail.com">📧 buptliuwei@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <a href="https://scholar.google.com/citations?user=oTP5ZpcAAAAJ" target="_blank">📚 Google Scholar</a>
+            </div>
+            <div class="contact-item">
+                <a href="https://xiaohuaishu.github.io/" target="_blank">💻 GitHub</a>
+            </div>
+        </div>
+    </section>
+    
+    <footer style="margin-top: 60px; text-align: center; color: #999; font-size: 12px; padding-top: 20px; border-top: 1px solid #e5e5e5;">
+        © 2026 刘伟 · 大语言模型与智能体专家
     </footer>
 </body>
 </html>
