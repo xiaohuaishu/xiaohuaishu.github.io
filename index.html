@@ -3,427 +3,647 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>刘伟 - 专注大语言模型与AI Agent技术研究和应用</title>
-    <meta name="description" content="刘伟 - 专注大语言模型与AI Agent技术研究和应用">
+    <title>刘伟 - 大语言模型与AI Agent技术负责人</title>
+    <meta name="description" content="刘伟 - 小米大模型智能体团队负责人，专注大语言模型预训练、Agent架构与端侧部署。7年团队管理经验，30+顶会论文，小米百万美金技术大奖得主。">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
             line-height: 1.7;
             color: #333;
             background: #f8f9fa;
         }
+
         .container {
-            max-width: 1000px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            padding: 80px 0 60px;
+            padding: 100px 0 80px;
             margin-bottom: 40px;
+            position: relative;
+            overflow: hidden;
         }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(255,255,255,0.1) 0%, transparent 70%);
+        }
+
         .hero-header {
             display: flex;
             align-items: center;
-            gap: 40px;
-            margin-bottom: 40px;
+            gap: 50px;
+            margin-bottom: 50px;
+            position: relative;
+            z-index: 1;
         }
+
         .avatar {
-            width: 150px;
-            height: 150px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             object-fit: cover;
-            border: 4px solid rgba(255, 255, 255, 0.3);
+            border: 5px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
         }
+
+        .hero-info {
+            flex: 1;
+        }
+
         .hero-info h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 700;
+            font-size: 3em;
+            margin-bottom: 12px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
-        .hero-info .tagline {
-            font-size: 1.2em;
+
+        .hero-tagline {
+            font-size: 1.15em;
             opacity: 0.95;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            font-weight: 300;
+            line-height: 1.5;
         }
+
+        .position-badge {
+            display: inline-block;
+            padding: 6px 16px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            backdrop-filter: blur(10px);
+        }
+
         .contact-links {
             display: flex;
-            gap: 20px;
+            gap: 15px;
             flex-wrap: wrap;
         }
+
         .contact-links a {
             color: white;
             text-decoration: none;
-            padding: 8px 20px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
             transition: all 0.3s;
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            font-size: 0.95em;
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
+
         .contact-links a:hover {
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.25);
             transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
-        /* Stats Cards */
+
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(4, 1fr);
             gap: 20px;
             margin-top: 40px;
+            position: relative;
+            z-index: 1;
         }
+
         .stat-card {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 20px;
-            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 25px 20px;
+            border-radius: 16px;
             text-align: center;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            transition: all 0.3s;
         }
+
+        .stat-card:hover {
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-3px);
+        }
+
         .stat-number {
-            font-size: 2em;
-            font-weight: 700;
-            margin-bottom: 5px;
+            font-size: 2.4em;
+            font-weight: 800;
+            margin-bottom: 8px;
+            background: linear-gradient(135deg, #fff 0%, #e0e0e0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
+
         .stat-label {
             font-size: 0.9em;
             opacity: 0.9;
+            font-weight: 400;
         }
+
+        /* Tech Philosophy Section */
+        .tech-philosophy {
+            background: linear-gradient(135deg, #fff 0%, #f8f9fa 100%);
+            border-radius: 16px;
+            padding: 45px 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+            border-left: 5px solid #667eea;
+        }
+
+        .philosophy-title {
+            font-size: 1.4em;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #667eea;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .philosophy-text {
+            font-size: 1.05em;
+            color: #555;
+            line-height: 1.9;
+        }
+
+        .philosophy-text strong {
+            color: #667eea;
+            font-weight: 600;
+        }
+
         /* Section Styles */
         .section {
             background: white;
-            border-radius: 12px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-radius: 16px;
+            padding: 50px;
+            margin-bottom: 40px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
         }
+
         .section-title {
-            font-size: 1.8em;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
+            font-size: 2em;
+            margin-bottom: 35px;
+            padding-bottom: 20px;
             border-bottom: 3px solid #667eea;
             display: flex;
             align-items: center;
+            gap: 12px;
+            font-weight: 700;
+        }
+
+        /* Work Experience - Capability Based */
+        .experience-container {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+        }
+
+        .experience-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            border-radius: 14px;
+            padding: 35px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 24px rgba(102, 126, 234, 0.15);
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
             gap: 10px;
         }
-        /* Research Directions */
-        .research-grid {
+
+        .experience-title {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .experience-company {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+
+        .experience-period {
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+        }
+
+        .experience-desc {
+            color: #555;
+            line-height: 1.8;
+            font-size: 1.05em;
+            margin-bottom: 15px;
+        }
+
+        .experience-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .highlight-tag {
+            background: #e8ecf1;
+            color: #555;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 500;
+        }
+
+        /* Honors Section */
+        .honors-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 25px;
         }
-        .research-card {
-            background: #f8f9fa;
+
+        .honor-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            padding: 30px;
+            border-radius: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s;
+        }
+
+        .honor-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.12);
+            border-color: #667eea;
+        }
+
+        .honor-card.top-honor {
+            background: linear-gradient(135deg, #fff5e6 0%, #fff 100%);
+            border: 2px solid #ffd700;
+        }
+
+        .honor-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .honor-icon {
+            font-size: 2em;
+        }
+
+        .honor-title {
+            font-weight: 700;
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .honor-year {
+            color: #667eea;
+            font-weight: 600;
+            font-size: 0.9em;
+        }
+
+        .honor-impact {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.7;
+            padding-left: 48px;
+        }
+
+        .honor-photo {
+            margin-top: 15px;
+            padding-left: 48px;
+        }
+
+        .honor-photo img {
+            width: 100%;
+            max-width: 450px;
             border-radius: 10px;
-            padding: 25px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Representative Papers */
+        .papers-grid {
+            display: grid;
+            gap: 30px;
+        }
+
+        .paper-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 30px;
             border-left: 4px solid #667eea;
             transition: all 0.3s;
         }
-        .research-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+
+        .paper-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.15);
         }
-        .research-title {
-            font-size: 1.3em;
-            margin-bottom: 15px;
-            color: #667eea;
-            font-weight: 600;
-        }
-        .paper-list {
-            list-style: none;
-        }
-        .paper-item {
-            padding: 12px 0;
-            border-bottom: 1px solid #e9ecef;
-        }
-        .paper-item:last-child {
-            border-bottom: none;
-        }
+
         .paper-title {
-            font-weight: 600;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 12px;
             color: #333;
-            margin-bottom: 5px;
         }
+
+        .paper-title a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .paper-title a:hover {
+            color: #667eea;
+        }
+
         .paper-meta {
-            font-size: 0.9em;
-            color: #666;
             display: flex;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
+            margin-bottom: 15px;
         }
+
         .badge {
             display: inline-block;
-            padding: 3px 10px;
-            border-radius: 12px;
+            padding: 4px 12px;
+            border-radius: 20px;
             font-size: 0.8em;
             font-weight: 600;
         }
-        .badge-main {
+
+        .badge-a {
+            background: #667eea;
+            color: white;
+        }
+
+        .badge-b {
             background: #28a745;
             color: white;
         }
-		.badge-reward {
-            background: #FF0000;
+
+        .badge-oral {
+            background: #FF6B6B;
             color: white;
         }
-        .badge-findings {
-            background: #6c757d;
-            color: white;
-        }
-        .badge-ccf-a {
-            background: #007bff;
-            color: white;
-        }
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-left: 30px;
-        }
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(to bottom, #667eea, #764ba2);
-        }
-        .timeline-item {
-            position: relative;
-            padding-bottom: 30px;
-        }
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -36px;
-            top: 5px;
-            width: 15px;
-            height: 15px;
-            border-radius: 50%;
-            background: #667eea;
-            border: 3px solid white;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
-        }
-        .timeline-date {
-            font-size: 0.9em;
-            color: #667eea;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        .timeline-title {
-            font-size: 1.1em;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-        .timeline-desc {
-            color: #666;
-            font-size: 0.95em;
-        }
-        /* Insights */
-        .insight-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #e8ecf1 100%);
-            padding: 25px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-        .insight-title {
-            font-size: 1.2em;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #667eea;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .insight-content {
-            color: #555;
-            line-height: 1.8;
-        }
-        .insight-content ul {
-            padding-left: 20px;
-            margin-top: 10px;
-        }
-        .insight-content li {
-            margin-bottom: 8px;
-        }
-        /* Honors */
-        .honors-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        .honor-item {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            display: flex;
-            align-items: flex-start;
-            gap: 15px;
-        }
-        .honor-icon {
-            font-size: 1.5em;
-            margin-top: 2px;
-        }
-        .honor-text h4 {
-            margin-bottom: 5px;
+
+        .badge-highlight {
+            background: #FFD700;
             color: #333;
         }
-        .honor-text p {
-            font-size: 0.9em;
+
+        .paper-impact {
             color: #666;
-            margin: 0;
-        }
-        .honor-photo {
-            margin-top: 15px;
-            width: 100%;
-        }
-        .honor-photo img {
-            width: 100%;
-            max-width: 400px;
+            font-size: 1.05em;
+            line-height: 1.8;
+            background: #fff;
+            padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
+            border-left: 3px solid #667eea;
         }
-        .honor-photo img:hover {
-            transform: scale(1.02);
+
+        .paper-impact strong {
+            color: #667eea;
         }
-        .honor-with-photo {
-            grid-column: 1 / -1;
+
+        .paper-authors {
+            color: #777;
+            font-size: 0.9em;
+            margin-bottom: 10px;
         }
+
+        .view-all-link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .view-all-link a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            padding: 12px 30px;
+            border: 2px solid #667eea;
+            border-radius: 25px;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+
+        .view-all-link a:hover {
+            background: #667eea;
+            color: white;
+        }
+
+        /* Speaking Section */
+        .speaking-list {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .speaking-item {
+            background: linear-gradient(135deg, #f8f9fa 0%, #fff 100%);
+            padding: 25px 30px;
+            border-radius: 12px;
+            border-left: 4px solid #667eea;
+            transition: all 0.3s;
+        }
+
+        .speaking-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 16px rgba(102, 126, 234, 0.12);
+        }
+
+        .speaking-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .speaking-title {
+            font-size: 1.2em;
+            font-weight: 700;
+            color: #333;
+        }
+
+        .speaking-title a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .speaking-title a:hover {
+            color: #667eea;
+        }
+
+        .speaking-meta {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .speaking-role {
+            background: #667eea;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            font-size: 0.8em;
+            font-weight: 600;
+        }
+
+        .speaking-venue {
+            color: #666;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+
+        .speaking-desc {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1em;
+        }
+
         /* Footer */
         .footer {
             text-align: center;
-            padding: 40px 0;
+            padding: 50px 0;
             color: #666;
-            border-top: 1px solid #e9ecef;
+            border-top: 2px solid #e9ecef;
             margin-top: 60px;
         }
+
+        .footer p {
+            font-size: 1.05em;
+        }
+
         /* Responsive */
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
             .hero-header {
                 flex-direction: column;
                 text-align: center;
+                gap: 30px;
             }
+
             .hero-info h1 {
-                font-size: 2em;
+                font-size: 2.3em;
             }
-            .hero-info .tagline {
-                font-size: 1em;
+
+            .hero-tagline {
+                font-size: 1.05em;
             }
+
             .contact-links {
                 justify-content: center;
             }
-            .contact-links a {
-                padding: 6px 15px;
-                font-size: 0.9em;
-            }
-            .section {
-                padding: 20px 15px;
-            }
-            .section-title {
-                font-size: 1.4em;
-            }
+
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
                 gap: 15px;
             }
-            .stat-card {
-                padding: 15px 10px;
-            }
+
             .stat-number {
+                font-size: 2em;
+            }
+
+            .section {
+                padding: 35px 25px;
+            }
+
+            .section-title {
                 font-size: 1.6em;
             }
-            .stat-label {
-                font-size: 0.8em;
+
+            .tech-philosophy {
+                padding: 30px 25px;
             }
-            .research-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
+
+            .experience-card {
+                padding: 25px;
             }
-            .research-card {
-                padding: 20px;
+
+            .experience-title {
+                font-size: 1.3em;
             }
-            .research-title {
-                font-size: 1.2em;
-            }
-            .paper-item {
-                padding: 10px 0;
-            }
-            .paper-meta {
-                flex-wrap: wrap;
-                gap: 8px;
-            }
-            .badge {
-                padding: 2px 8px;
-                font-size: 0.75em;
-            }
-            .timeline {
-                padding-left: 20px;
-            }
-            .timeline::before {
-                width: 2px;
-            }
-            .timeline-item::before {
-                left: -26px;
-                width: 12px;
-                height: 12px;
-            }
-            .timeline-date {
-                font-size: 0.85em;
-            }
-            .timeline-title {
-                font-size: 1em;
-            }
-            .timeline-desc {
-                font-size: 0.9em;
-            }
+
             .honors-grid {
                 grid-template-columns: 1fr;
-                gap: 15px;
             }
-            .honor-item {
-                padding: 15px;
+
+            .paper-card {
+                padding: 25px;
             }
-            .insight-card {
+
+            .speaking-item {
                 padding: 20px;
             }
-            .insight-title {
-                font-size: 1.1em;
-            }
-            .insight-content {
-                font-size: 0.95em;
-            }
-            .avatar {
-                width: 120px;
-                height: 120px;
-            }
+
             .hero {
-                padding: 50px 0 40px;
+                padding: 70px 0 60px;
             }
         }
+
         @media (max-width: 480px) {
             .hero-info h1 {
-                font-size: 1.8em;
+                font-size: 2em;
             }
+
+            .hero-tagline {
+                font-size: 0.95em;
+            }
+
             .stats-grid {
                 grid-template-columns: 1fr 1fr;
             }
+
             .stat-number {
-                font-size: 1.4em;
+                font-size: 1.6em;
             }
-            .paper-title a {
-                font-size: 0.95em;
-            }
+
             .contact-links a {
                 width: 100%;
                 justify-content: center;
-                margin-bottom: 5px;
+                margin-bottom: 8px;
             }
         }
     </style>
@@ -436,472 +656,564 @@
                 <img src="20250718-164913.jpg" alt="刘伟" class="avatar">
                 <div class="hero-info">
                     <h1>刘伟</h1>
-                    <p class="tagline">专注大语言模型与AI Agent技术研究和应用</p>
+                    <p class="hero-tagline">从对话系统到LLM，专注让AI真正理解并服务用户</p>
+					<p class="hero-tagline">大语言模型预训练、大模型智能体、端侧部署的大模型全栈实践者</p>
+                    <div class="position-badge">AI Agent负责人（25-至今）| 小米大语言模型负责人（23-25） </div>
                     <div class="contact-links">
                         <a href="mailto:buptliuwei@gmail.com">📧 buptliuwei@gmail.com</a>
                         <a href="https://scholar.google.com/citations?user=oTP5ZpcAAAAJ" target="_blank">📚 Google Scholar</a>
                     </div>
                 </div>
             </div>
+
             <div class="stats-grid">
-				<div class="stat-card">
-                    <div class="stat-number">3+</div>
-                    <div class="stat-label">年大模型预训练和智能体</div>
+                <div class="stat-card">
+                    <div class="stat-number">7年</div>
+                    <div class="stat-label">一线和中层管理经验</div>
                 </div>
                 <div class="stat-card">
-                    <div class="stat-number">7</div>
-                    <div class="stat-label">年一线和中层管理经验</div>
-                </div>
-				<div class="stat-card">
                     <div class="stat-number">30+</div>
-                    <div class="stat-label">大模型顶会论文</div>
+                    <div class="stat-label">顶会论文（ACL/AAAI/IJCAI等）</div>
                 </div>
-                
+                <div class="stat-card">
+                    <div class="stat-number">3+</div>
+                    <div class="stat-label">年大模型预训练和智能体经验</div>
+                </div>
                 <div class="stat-card">
                     <div class="stat-number">2023</div>
-                    <div class="stat-label">小米百万美金技术大奖</div>
+                    <div class="stat-label">小米百万美金技术大奖得主</div>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="container">
+        <!-- Tech Philosophy -->
+        <div class="tech-philosophy">
+            <div class="philosophy-title">💡 技术主张</div>
+            <div class="philosophy-text">
+                大模型的价值不在于参数规模，而在于<strong>场景落地</strong>。从微软小冰的"情感对话"到小米MiLM的"端侧部署"，再到智能体的"工具调用"，我始终在探索如何让AI技术真正<strong>触达用户、解决问题</strong>。技术深度是基础，但更重要的是将前沿研究转化为可落地的产品和体验。
+            </div>
+        </div>
+
         <!-- Work Experience -->
         <div class="section">
-            <h2 class="section-title">💼 工作经历</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="timeline-title">2025-至今 小米大模型plus · 大模型智能体团队负责人</div>
+            <h2 class="section-title">💼 核心能力与经历</h2>
+            <div class="experience-container">
+
+                <!-- AI Agent -->
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">AI Agent与落地应用</div>
+                            <div class="experience-company">小米大模型plus · 大模型智能体团队负责人（2025-至今）</div>
+                        </div>
+                        <div class="experience-period">2025-至今</div>
                     </div>
-                    <div class="timeline-desc">负责AI Agent关键技术研究，包括深度研究、GUI Agent、RAG&记忆，并支持业务落地</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="timeline-title">2023-2025 小米大模型 · 大语言模型团队负责人</div>
+                    <div class="experience-desc">
+                        负责AI Agent关键技术研究，包括深度研究、GUI Agent、RAG&记忆，并支持业务落地。带领团队攻克移动端Agent在复杂UI环境下的任务执行难题，提出"页面到达+页面操作"两阶段框架，在AutoUI等基准测试中超越SOTA。集成多个面向应用的Agent，通过自进化机制实现跨应用指令自动化，显著提升复杂任务执行效率。
                     </div>
-                    <div class="timeline-desc">负责小米自研大语言模型MiLM系列的预训练和后训练</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="timeline-title">2020-2023 小米AI实验室 · 闲聊对话团队负责人</div>
+                    <div class="experience-highlights">
+                        <span class="highlight-tag">GUI Agent</span>
+                        <span class="highlight-tag">工具调用</span>
+                        <span class="highlight-tag">RAG</span>
+                        <span class="highlight-tag">记忆机制</span>
+                        <span class="highlight-tag">深度研究</span>
+                        <span class="highlight-tag">ACL 2025 SAC Hightlight</span>
                     </div>
-                    <div class="timeline-desc">负责闲聊对话研究，并主导小爱同学闲聊对话系统研发</div>
                 </div>
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="timeline-title">2015-2020 微软小冰团队 · 初创成员</div>
+
+                <!-- LLM Training -->
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">大语言模型预训练与后训练</div>
+                            <div class="experience-company">小米大模型 · 大语言模型团队负责人（2023-2025）</div>
+                        </div>
+                        <div class="experience-period">2023-2025</div>
                     </div>
-                    <div class="timeline-desc">闲聊对话研究和微软小冰闲聊对话系统研发</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="timeline-title">2013-2015 微软必应搜索 · 网页理解团队</div>
+                    <div class="experience-desc">
+                        负责小米自研大语言模型MiLM系列的预训练和后训练。在长上下文、推理加速、量化部署等方向持续突破，提出HoPE高频旋转位置编码打破RoPE长期衰减限制，开发TailorKV混合压缩方法支持128k上下文在单GPU部署。团队成果在ACL、AAAI、IJCAI等顶会发表30+篇论文，多篇获Oral/Highlight奖项。
                     </div>
-                    <div class="timeline-desc">网页理解和质量检测、网页排序</div>
-                </div>
-                <div class="timeline-item">
-                    <div class="timeline-header">
-                        <div class="timeline-title">2006-2013 北京邮电大学 · 通信工程&计算机</div>
+                    <div class="experience-highlights">
+                        <span class="highlight-tag">预训练</span>
+                        <span class="highlight-tag">后训练</span>
+                        <span class="highlight-tag">推理加速</span>
+                        <span class="highlight-tag">长上下文</span>
+                        <span class="highlight-tag">量化部署</span>
+                        <span class="highlight-tag">30+顶会论文</span>
                     </div>
-                    <div class="timeline-desc">本硕毕业</div>
                 </div>
+
+                <!-- Dialogue Systems -->
+                <div class="experience-card">
+                    <div class="experience-header">
+                        <div>
+                            <div class="experience-title">对话系统与交互设计</div>
+                            <div class="experience-company">小米AI实验室 · 闲聊对话团队负责人（2020-2023） | 微软小冰团队 · 初创成员（2015-2020）</div>
+                        </div>
+                        <div class="experience-period">2015-2023</div>
+                    </div>
+                    <div class="experience-desc">
+                        从微软小冰的"情感对话"到小米小爱同学的闲聊系统，深耕对话交互领域8年。负责闲聊对话研究，主导小爱同学闲聊对话系统研发，在情绪感知、共情对话、心理陪伴方向实现技术落地。早期在微软必应搜索从事网页理解和质量检测，积累搜索引擎底层技术经验。
+                    </div>
+                    <div class="experience-highlights">
+                        <span class="highlight-tag">闲聊对话</span>
+                        <span class="highlight-tag">情感交互</span>
+                        <span class="highlight-tag">小爱同学</span>
+                        <span class="highlight-tag">微软小冰</span>
+                        <span class="highlight-tag">网页理解</span>
+                    </div>
+                </div>
+
             </div>
         </div>
-        <!-- Honors & Services -->
+
+        <!-- Honors -->
         <div class="section">
             <h2 class="section-title">🏆 荣誉与社会活动</h2>
-            <!-- 荣誉部分 -->
-            <div class="honors-section">
-                <h3 class="subsection-title">🏅 荣誉</h3>
-				<div class="honors-grid">
-					<div class="honor-item honor-with-photo">
-						<div class="honor-icon">🥇</div>
-						<div class="honor-text">
-							<h4>2023小米年度技术大奖 百万美金技术大奖 · 小米澎湃OS新架构</h4>
-							<p>小米集团最高技术奖，每年一个</p>
-
-							<div class="honor-photo">
-								<img src="baiwanmeijin.jpg" alt="百万美金技术大奖">
-							</div>
-						</div>
-					</div>
-					<div class="honor-item">
-						<div class="honor-icon">🏅</div>
-						<div class="honor-text">
-							<h4>2024年度数博会优秀科技成果奖</h4>
-						</div>
-					</div>
-					<div class="honor-item">
-						<div class="honor-icon">🏅</div>
-						<div class="honor-text">
-							<h4>2024年度CCF计算机应用创新技术一等奖</h4>
-						</div>
-					</div>
-					<div class="honor-item">
-						<div class="honor-icon">🏅</div>
-						<div class="honor-text">
-							<h4>2024小米年度技术大奖 优秀奖 · 小米端侧大语言模型</h4>
-						</div>
-					</div>				
-					<div class="honor-item">
-						<div class="honor-icon">🎖️</div>
-						<div class="honor-text">
-							<h4>2022小米集团第三届黑客马拉松 优秀奖 · 个性化儿童有声故事生成</h4>
-						</div>
-					</div>
-					
-                </div>
-            </div>
-            <!-- 社会活动部分 -->
-            <div class="honors-section">
-                <h3 class="subsection-title">🤝 社会活动</h3>
-                <div class="honors-grid">
-                    <div class="honor-item">
-                        <div class="honor-icon">🎓</div>
-                        <div class="honor-text">
-                            <h4>CCF YOCSEF总部学术委员、CCF大模型论坛执委</h4>
+            <div class="honors-grid">
+                <div class="honor-card top-honor">
+                    <div class="honor-header">
+                        <div class="honor-icon">🥇</div>
+                        <div>
+                            <div class="honor-title">小米百万美金技术大奖</div>
+                            <div class="honor-year">2023</div>
                         </div>
                     </div>
-                    <div class="honor-item">
-                        <div class="honor-icon">👨‍🏫</div>
-                        <div class="honor-text">
-                            <h4>企业导师</h4>
-                            <p>北大心理与认知科学学院、北京邮电大学计算机学院</p>
+                    <div class="honor-impact">
+                        <strong>小米集团年度最高技术荣誉</strong>，全球仅一个团队获奖。表彰在小米澎湃OS新架构中的技术突破，这是小米技术体系的最高认可。
+                    </div>
+                    <div class="honor-photo">
+                        <img src="baiwanmeijin.jpg" alt="百万美金技术大奖">
+                    </div>
+                </div>
+
+                <div class="honor-card">
+                    <div class="honor-header">
+                        <div class="honor-icon">🏅</div>
+                        <div>
+                            <div class="honor-title">数博会优秀科技成果奖</div>
+                            <div class="honor-year">2024</div>
+                        </div>
+                    </div>
+                    <div class="honor-impact">
+                        在大数据和人工智能领域的创新成果获得国家级认可，展示了在端侧大语言模型的技术实力。
+                    </div>
+                </div>
+
+                <div class="honor-card">
+                    <div class="honor-header">
+                        <div class="honor-icon">🏅</div>
+                        <div>
+                            <div class="honor-title">CCF计算机应用创新技术一等奖</div>
+                            <div class="honor-year">2024</div>
+                        </div>
+                    </div>
+                    <div class="honor-impact">
+                        中国计算机学会（CCF）颁发，在计算机应用技术创新方面获得权威认可。
+                    </div>
+                </div>
+
+                <div class="honor-card">
+                    <div class="honor-header">
+                        <div class="honor-icon">🏅</div>
+                        <div>
+                            <div class="honor-title">小米年度技术大奖 · 优秀奖</div>
+                            <div class="honor-year">2024</div>
+                        </div>
+                    </div>
+                    <div class="honor-impact">
+                        表彰在小米端侧大语言模型项目中的技术贡献，再次验证团队在大模型落地方面的能力。
+                    </div>
+                </div>
+
+                <div class="honor-card">
+                    <div class="honor-header">
+                        <div class="honor-icon">🎖️</div>
+                        <div>
+                            <div class="honor-title">小米黑客马拉松 · 优秀奖</div>
+                            <div class="honor-year">2022</div>
+                        </div>
+                    </div>
+                    <div class="honor-impact">
+                        "个性化儿童有声故事生成"项目在内部创新竞赛中脱颖而出，展示了在AI应用创新方面的能力。
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 40px; padding-top: 30px; border-top: 2px solid #e9ecef;">
+                <h3 style="font-size: 1.3em; margin-bottom: 20px; color: #667eea;">🤝 社会活动</h3>
+                <div class="honors-grid">
+                    <div class="honor-card">
+                        <div class="honor-header">
+                            <div class="honor-icon">🎓</div>
+                            <div>
+                                <div class="honor-title">CCF YOCSEF学术委员</div>
+                            </div>
+                        </div>
+                        <div class="honor-impact">
+                            CCF青年精英大会（YOCSEF）总部学术委员、CCF大模型论坛执委，积极参与AI技术社区建设。
+                        </div>
+                    </div>
+
+                    <div class="honor-card">
+                        <div class="honor-header">
+                            <div class="honor-icon">👨‍🏫</div>
+                            <div>
+                                <div class="honor-title">企业导师</div>
+                            </div>
+                        </div>
+                        <div class="honor-impact">
+                            北京大学心理与认知科学学院、北京邮电大学计算机学院企业导师，培养下一代AI技术人才。
+                        </div>
+                    </div>
+
+                    <div class="honor-card">
+                        <div class="honor-header">
+                            <div class="honor-icon">👨‍⚖️</div>
+                            <div>
+                                <div class="honor-title">会议评审专家</div>
+                            </div>
+                        </div>
+                        <div class="honor-impact">
+                            CCF优秀大学生学术秀评审专家、CCF YEF学术秀特邀评委，参与学术评审和交流活动。
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-		
-		<!-- Research Directions -->
+
+        <!-- Representative Papers -->
         <div class="section">
-            <h2 class="section-title">🔬 研究方向</h2>
-            <div class="research-grid">
+            <h2 class="section-title">🔬 代表性研究成果</h2>
+            <div class="paper-grid">
+                <div class="paper-card">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/2410.21216" target="_blank">HoPE: A Novel Positional Encoding Without Long-Term Decay for Enhanced Context Awareness and Extrapolation</a></div>
+                    <div class="paper-authors">Yuhan Chen, Ang Lv, Jian Luan, Bin Wang, Wei Liu</div>
+                    <div class="paper-meta">
+                        <span class="badge badge-venue">ACL 2025</span>
+                        <span class="badge badge-type">CCF A类</span>
+                        <span class="badge badge-award">SAC Highlight</span>
+                    </div>
+                    <p class="paper-desc">提出高频旋转位置编码，打破传统RoPE的长期衰减限制，在长上下文理解任务中展现出更强的外推能力和鲁棒性。</p>
+                </div>
+                
+                <div class="paper-card">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/2409.14818" target="_blank">MobileVLM: A Vision-Language Model for Better Intra- and Inter-UI Understanding</a></div>
+                    <div class="paper-authors">Qinzhuo Wu, Weikai Xu, Wei Liu, Tao Tan, Jianfeng Liu, Ang Li, Jian Luan, Bin Wang, Shuo Shang</div>
+                    <div class="paper-meta">
+                        <span class="badge badge-venue">EMNLP 2024</span>
+                        <span class="badge badge-type">CCF B类</span>
+                    </div>
+                    <p class="paper-desc">构建300万UI页面的Mobile3M数据集，提出增强UI内和UI间理解的预训练任务，在骁龙888 CPU上达到行业领先推理速度。</p>
+                </div>
+                
+                <div class="paper-card">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/2502.16796" target="_blank">MobileSteward: Integrating Multiple App-Oriented Agents with Self-Evolution to Automate Cross-App Instructions</a></div>
+                    <div class="paper-authors">Yuxuan Liu, Hongda Sun, Wei Liu, Jian Luan, Bo Du, Rui Yan</div>
+                    <div class="paper-meta">
+                        <span class="badge badge-venue">KDD 2025</span>
+                        <span class="badge badge-type">CCF A类</span>
+                    </div>
+                    <p class="paper-desc">集成多个面向应用的Agent，通过自进化机制实现跨应用指令自动化，显著提升复杂任务执行效率。</p>
+                </div>
+                
+                <div class="paper-card">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/2407.00993" target="_blank">Mobile-Bench: An Evaluation Benchmark for LLM-based Mobile Agents</a></div>
+                    <div class="paper-authors">Shihan Deng, Weikai Xu, Hongda Sun, Wei Liu, Tao Tan, Jianfeng Liu, Ang Li, Jian Luan, Bin Wang, Rui Yan, Shuo Shang</div>
+                    <div class="paper-meta">
+                        <span class="badge badge-venue">EMNLP 2025</span>
+                        <span class="badge badge-type">CCF B类</span>
+                    </div>
+                    <p class="paper-desc">构建移动端Agent评估基准，为移动端AI Agent的研究和应用提供标准化的评估体系。</p>
+                </div>
+                
+                <div class="paper-card">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/2505.20660" target="_blank">BacktrackAgent: Enhancing GUI Agent with Error Detection and Backtracking Mechanism</a></div>
+                    <div class="paper-authors">Qinzhuo Wu, Pengzhi Gao, Wei Liu, Jian Luan</div>
+                    <div class="paper-meta">
+                        <span class="badge badge-venue">EMNLP 2025</span>
+                        <span class="badge badge-type">CCF B类</span>
+                        <span class="badge badge-award">Oral</span>
+                    </div>
+                    <p class="paper-desc">提出错误检测和回溯机制，提升GUI Agent的任务执行成功率和鲁棒性。</p>
+                </div>
+                
+                <div class="paper-card">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/2402.16775" target="_blank">A Comprehensive Evaluation of Quantization Strategies for Large Language Models</a></div>
+                    <div class="paper-authors">Renren Jin, Jiangcun Du, Wuwei Huang, Wei Liu, Jian Luan, Bin Wang, Deyi Xiong</div>
+                    <div class="paper-meta">
+                        <span class="badge badge-venue">ACL 2024</span>
+                        <span class="badge badge-type">CCF A类</span>
+                    </div>
+                    <p class="paper-desc">系统性评估多种LLM量化策略（包括GPTQ、SpQR等），从效率、知识容量和一致性三个维度分析量化对模型性能的影响。</p>
+                </div>
+                
+                <div class="paper-card">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/2412.05547" target="_blank">Kg-retriever: Efficient knowledge indexing for retrieval-augmented large language models</a></div>
+                    <div class="paper-authors">Weijie Chen, Ting Bai, Jinbo Su, Jian Luan, Wei Liu, Chuan Shi</div>
+                    <p class="paper-desc">提出高效的知识索引方法，提升检索增强大语言模型的知识检索效率和准确性。</p>
+                </div>
+                
+                <div class="paper-card">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/2402.13991" target="_blank">Analysing The Impact of Sequence Composition on Language Model Pre-Training</a></div>
+                    <div class="paper-authors">Yu Zhao, Yuanbin Qu, Konrad Staniszewski, Szymon Tworkowski, Wei Liu, Piotr Miłoś, Yuxiang Wu, Pasquale Minervini</div>
+                    <div class="paper-meta">
+                        <span class="badge badge-venue">ACL 2024</span>
+                        <span class="badge badge-type">CCF A类</span>
+                        <span class="badge badge-award">Oral</span>
+                    </div>
+                    <p class="paper-desc">分析序列组合对语言模型预训练的影响，为数据构建和训练策略提供理论指导。</p>
+                </div>
+                
+                <div class="paper-card">
+                    <div class="paper-title"><a href="https://arxiv.org/abs/2502.02955" target="_blank">ReachAgent: Enhancing Mobile Agent via Page Reaching and Page Operation</a></div>
+                    <div class="paper-authors">Qinzhuo Wu, Wei Liu, Jian Luan, Bin Wang</div>
+                    <div class="paper-meta">
+                        <span class="badge badge-venue">NAACL 2025</span>
+                        <span class="badge badge-type">CCF B类</span>
+                    </div>
+                    <p class="paper-desc">提出两阶段框架，将手机控制任务拆解为页面到达和页面操作子任务，任务完成率提升4.72%，在AutoUI数据集上超越SOTA。</p>
+                </div>
+            </div>
+            
+            <div class="all-papers-toggle">
+                <button class="toggle-btn" onclick="toggleAllPapers()">查看全部研究成果（30+篇）</button>
+            </div>
+            
+            <div id="allPapers" class="all-papers-content">
                 <!-- 大语言模型 -->
                 <div class="research-card">
-                    <div class="research-title">大语言模型</div>
-                    <p style="margin-bottom: 15px; color: #666;">预训练、后训练、推理加速</p>
+                    <div class="research-title">大语言模型 · 全部论文</div>
                     <ul class="paper-list">
                         <li class="paper-item">
-                            <div class="paper-title"><a href="https://arxiv.org/abs/2410.21216" target="_blank" style="color: #667eea; text-decoration: none;">HoPE: A Novel Positional Encoding Without Long-Term Decay for Enhanced Context Awareness and Extrapolation</a></div>
-                            <div class="paper-authors">Yuhan Chen, Ang Lv, Jian Luan, Bin Wang, Wei Liu</div>
-                            <div class="paper-meta">
-                                <span class="badge badge-main">ACL 2025</span>
-                                <span class="badge badge-ccf-a">CCF A类</span>
-								<span class="badge badge-reward">SAC Highlight奖项</span>
-                            </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">提出高频旋转位置编码,打破传统RoPE的长期衰减限制,在长上下文理解任务中展现出更强的外推能力和鲁棒性。</p>
-                        </li>
-						<li class="paper-item">
                             <div class="paper-title"><a href="https://aclanthology.org/2025.acl-long.718/" target="_blank" style="color: #667eea; text-decoration: none;">Demystifying Small Language Models for Edge Deployment</a></div>
-                            <div class="paper-authors">Zhenyan Lu, Xiang Li, Dongqi Cai, Rongjie Yi, Fangming Liu, Wei Liu, Jian Luan, Xiwen Zhang, Nicholas D. Lane, Mengwei Xu</div>
                             <div class="paper-meta">
-                                <span class="badge badge-main">ACL 2025</span>
-                                <span class="badge badge-ccf-a">CCF A类</span>
+                                <span class="badge badge-venue">ACL 2025</span>
+                                <span class="badge badge-type">CCF A类</span>
                             </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">对小语言模型进行全面系统性研究,覆盖68个公开可用的SLM,证明SLMs在通用任务上性能快速进化,已超越LLaMA-7B系列。揭示SLMs的关键优化方向,包括动态任务路由、模型-硬件协同设计以及词汇表和KV Cache压缩。</p>
                         </li>
-						<li class="paper-item">
+                        <li class="paper-item">
                             <div class="paper-title"><a href="https://arxiv.org/abs/2501.04070" target="_blank" style="color: #667eea; text-decoration: none;">More is not always better? Enhancing Many-Shot In-Context Learning with Differentiated and Reweighting Objectives</a></div>
-                            <div class="paper-authors">Xiaoqing Zhang, Ang Lv, Yuhan Liu, Flood Sung, Wei Liu, Jian Luan, Shuo Shang, Xiuying Chen, Rui Yan</div>
                             <div class="paper-meta">
-                                <span class="badge badge-main">ACL 2025</span>
-                                <span class="badge badge-ccf-a">CCF A类</span>
+                                <span class="badge badge-venue">ACL 2025</span>
+                                <span class="badge badge-type">CCF A类</span>
                             </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">针对多示例上下文学习性能下降问题,提出DrICL框架,通过全局差分优化确保多示例性能超越零示例,局部基于累计优势的动态加权抑制噪声数据。构建ICL-50基准测试,在域内外场景均显著提升模型性能。</p>
                         </li>
                         <li class="paper-item">
                             <div class="paper-title"><a href="https://arxiv.org/abs/2505.19586" target="_blank" style="color: #667eea; text-decoration: none;">TailorKV: A Hybrid Framework for Long-Context Inference via Tailored KV Cache Optimization</a></div>
-                            <div class="paper-authors">Dingyu Yao, Bowen Shen, Zheng Lin, Wei Liu, Jian Luan, Bin Wang, Weiping Wang</div>
                             <div class="paper-meta">
-                                <span class="badge badge-main">ACL 2025</span>
-                                <span class="badge badge-ccf-a">CCF A类</span>
+                                <span class="badge badge-venue">ACL 2025</span>
+                                <span class="badge badge-type">CCF A类</span>
                             </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">开发混合压缩方法,将量化与卸载无缝集成,在激进压缩设置下实现几乎无损的性能,支持128k上下文在单GPU上部署。</p>
-                        </li>
-						<li class="paper-item">
-                            <div class="paper-title"><a href="https://aclanthology.org/2025.acl-long.827/" target="_blank" style="color: #667eea; text-decoration: none;">Global Eye: Breaking the "Fixed Thinking Pattern" during the Instruction Expansion Process</a></div>
-                            <div class="paper-authors">Wenxuan Lu, Wei Liu, Jian Luan, Bin Wang, Songhao Jiang, Tianning Zang</div>
-                            <div class="paper-meta">
-                                <span class="badge badge-main">ACL 2025</span>
-                                <span class="badge badge-ccf-a">CCF A类</span>
-                            </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">打破指令扩展过程中的"固定思维模式",在多个评估指标上使Llama3-8B和Llama2-13B超越开源LLMs和GPT3.5。</p>
-                        </li>
-						<li class="paper-item">
-                            <div class="paper-title"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/33906/36061" target="_blank" style="color: #667eea; text-decoration: none;">Stability and Generalization of Zeroth-Order Decentralized Stochastic Gradient Descent with Changing Topology</a></div>
-                            <div class="paper-authors">XiaolinHu, ZixuanGong, GengzeXu, WeiLiu, JianLuan, BinWang, YongLiu</div>
-                            <div class="paper-meta">
-                                <span class="badge badge-main">AAAI 2025</span>
-                                <span class="badge badge-ccf-a">CCF A类</span>
-								<span class="badge badge-reward">Oral</span>
-                            </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">对零阶分布式随机梯度下降的泛化能力进行系统性分析,首次提供了匹配SGD的凸和强凸情形下的泛化界,并分析了通信拓扑对泛化性能的影响,揭示了客户数量和拓扑结构对模型泛化误差的作用机制。</p>
-                        </li>
-						<li class="paper-item">
-                            <div class="paper-title"><a href="https://arxiv.org/abs/2410.02247" target="_blank" style="color: #667eea; text-decoration: none;">Theoretical Insights into Fine-Tuning Attention Mechanism: Generalization and Optimization</a></div>
-                            <div class="paper-authors">Xinhao Yao, Hongjin Qian, Xiaolin Hu, Gengze Xu, Wei Liu, Jian Luan, Bin Wang, Yong Liu</div>
-                            <div class="paper-meta">
-                                <span class="badge badge-main">IJCAI 2025</span>
-                                <span class="badge badge-ccf-a">CCF A类</span>
-                            </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">揭示了注意力机制微调的两个重要现象:不同权重矩阵的重要性不等(优化Wv矩阵性能显著优于Wk矩阵);为不同矩阵设置定制学习率可加速收敛并提升性能。提出仅微调Wq&Wv矩阵的策略,在相同秩值下减少参数量,提升泛化界限并带来内存优势。</p>
-                        </li>
-						<li class="paper-item">
-                            <div class="paper-title"><a href="https://arxiv.org/abs/2409.16722" target="_blank" style="color: #667eea; text-decoration: none;">PMSS: Pretrained Matrices Skeleton Selection for LLM Fine-tuning</a></div>
-                            <div class="paper-authors">Qibin Wang, Xiaolin Hu, Weikai Xu, Wei Liu, Jian Luan, Bin Wang</div>
-                            <div class="paper-meta">
-                                <span class="badge badge-main">COLING 2025</span>
-                                <span class="badge badge-ccf-a">CCF B类</span>
-                            </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">提出预训练矩阵骨架选择方法,克服LoRA的低秩假设限制和初始化次优问题。通过从预训练权重矩阵中选择骨架并冻结,仅学习小矩阵实现高秩更新,利用预训练权重固有的语义和语言信息。在DROP基准和数学推理任务上显著超越LoRA及其他微调方法。</p>
-                        </li>
-						<li class="paper-item">
-                            <div class="paper-title"><a href="https://arxiv.org/abs/2402.13991" target="_blank" style="color: #667eea; text-decoration: none;">Analysing The Impact of Sequence Composition on Language Model Pre-Training</a></div>
-                            <div class="paper-authors">Yu Zhao, Yuanbin Qu, Konrad Staniszewski, Szymon Tworkowski, Wei Liu, Piotr Miłoś, Yuxiang Wu, Pasquale Minervini</div>
-                            <div class="paper-meta">
-                                <span class="badge badge-main">ACL 2024</span>
-                                <span class="badge badge-ccf-a">CCF A类</span>
-								<span class="badge badge-reward">Oral</span>
-                            </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">系统分析序列组成对语言模型预训练的影响,揭示了不同序列配置对模型学习效率和泛化能力的差异化作用,为优化预训练数据质量提供理论依据。</p>
-                        </li>
-						<li class="paper-item">
-                            <div class="paper-title"><a href="https://arxiv.org/abs/2407.05690" target="_blank" style="color: #667eea; text-decoration: none;">Pruning Large Language Models to Intra-module Low-rank Architecture with Transitional Activations</a></div>
-                            <div class="paper-authors">Bowen Shen, Zheng Lin, Daren Zha, Wei Liu, Jian Luan, Bin Wang, Weiping Wang</div>
-                            <div class="paper-meta">
-                                <span class="badge badge-main">ACL 2024</span>
-                                <span class="badge badge-ccf-a">CCF A类</span>
-                            </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">提出TransAct方法,通过减少多头注意力(MHA)和多层感知机(MLP)模块内的过渡激活,将LLM剪枝为模块内低秩架构,显著减少权重、KV Cache和注意力计算开销,为LLM高效推理开辟新路径。</p>
                         </li>
                         <li class="paper-item">
-                            <div class="paper-title"><a href="https://arxiv.org/abs/2402.16775" target="_blank" style="color: #667eea; text-decoration: none;">A Comprehensive Evaluation of Quantization Strategies for Large Language Models</a></div>
-                            <div class="paper-authors">Renren Jin, Jiangcun Du, Wuwei Huang, Wei Liu, Jian Luan, Bin Wang, Deyi Xiong</div>
+                            <div class="paper-title"><a href="https://aclanthology.org/2025.acl-long.827/" target="_blank" style="color: #667eea; text-decoration: none;">Global Eye: Breaking the "Fixed Thinking Pattern" during the Instruction Expansion Process</a></div>
                             <div class="paper-meta">
-                                <span class="badge badge-main">ACL 2024</span>
-                                <span class="badge badge-ccf-a">CCF A类</span>
+                                <span class="badge badge-venue">ACL 2025</span>
+                                <span class="badge badge-type">CCF A类</span>
                             </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">系统性评估多种LLM量化策略(包括GPTQ、SpQR等),从效率、知识容量和一致性三个维度分析量化对模型性能的影响。</p>
                         </li>
-						<li class="paper-item">
+                        <li class="paper-item">
+                            <div class="paper-title"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/33906/36061" target="_blank" style="color: #667eea; text-decoration: none;">Stability and Generalization of Zeroth-Order Decentralized Stochastic Gradient Descent with Changing Topology</a></div>
+                            <div class="paper-meta">
+                                <span class="badge badge-venue">AAAI 2025</span>
+                                <span class="badge badge-type">CCF A类</span>
+                                <span class="badge badge-award">Oral</span>
+                            </div>
+                        </li>
+                        <li class="paper-item">
+                            <div class="paper-title"><a href="https://arxiv.org/abs/2410.02247" target="_blank" style="color: #667eea; text-decoration: none;">Theoretical Insights into Fine-Tuning Attention Mechanism: Generalization and Optimization</a></div>
+                            <div class="paper-meta">
+                                <span class="badge badge-venue">IJCAI 2025</span>
+                                <span class="badge badge-type">CCF A类</span>
+                            </div>
+                        </li>
+                        <li class="paper-item">
+                            <div class="paper-title"><a href="https://arxiv.org/abs/2409.16722" target="_blank" style="color: #667eea; text-decoration: none;">PMSS: Pretrained Matrices Skeleton Selection for LLM Fine-tuning</a></div>
+                            <div class="paper-meta">
+                                <span class="badge badge-venue">COLING 2025</span>
+                                <span class="badge badge-type">CCF B类</span>
+                            </div>
+                        </li>
+                        <li class="paper-item">
+                            <div class="paper-title"><a href="https://arxiv.org/abs/2407.05690" target="_blank" style="color: #667eea; text-decoration: none;">Pruning Large Language Models to Intra-module Low-rank Architecture with Transitional Activations</a></div>
+                            <div class="paper-meta">
+                                <span class="badge badge-venue">ACL 2024</span>
+                                <span class="badge badge-type">CCF A类</span>
+                            </div>
+                        </li>
+                        <li class="paper-item">
                             <div class="paper-title"><a href="https://arxiv.org/abs/2310.18659" target="_blank" style="color: #667eea; text-decoration: none;">DetermLR: Augmenting LLM-based Logical Reasoning from Indeterminacy to Determinacy</a></div>
-                            <div class="paper-authors">Hongda Sun, Weikai Xu, Wei Liu, Jian Luan, Bin Wang, Shuo Shang, Ji-Rong Wen, Rui Yan</div>
                             <div class="paper-meta">
-                                <span class="badge badge-main">ACL 2024</span>
-                                <span class="badge badge-ccf-a">CCF A类</span>
+                                <span class="badge badge-venue">ACL 2024</span>
+                                <span class="badge badge-type">CCF A类</span>
                             </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">增强大语言模型的逻辑推理能力,将不确定性推理转化为确定性推理,显著提升模型在复杂逻辑任务上的准确性和稳定性。</p>
                         </li>
-						<li class="paper-item">
+                        <li class="paper-item">
                             <div class="paper-title"><a href="https://arxiv.org/abs/2406.06571" target="_blank" style="color: #667eea; text-decoration: none;">SUBLLM: A Novel Efficient Architecture with Token Sequence Subsampling for LLM</a></div>
-                            <div class="paper-authors">Quandong Wang, Yuxuan Yuan, Xiaoyu Yang, Ruike Zhang, Kang Zhao, Wei Liu, Jian Luan, Daniel Povey, Bin Wang</div>
                             <div class="paper-meta">
-                                <span class="badge badge-main">ECAI 2024</span>
-                                <span class="badge badge-ccf-a">CCF B类</span>
+                                <span class="badge badge-venue">ECAI 2024</span>
+                                <span class="badge badge-type">CCF B类</span>
                             </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">提出一种基于token序列子采样的新颖高效架构,通过智能子采样机制大幅减少计算开销,同时保持模型性能,为LLM高效推理提供新范式。</p>
                         </li>
-						<li class="paper-item">
+                        <li class="paper-item">
                             <div class="paper-title"><a href="https://arxiv.org/abs/2409.12210" target="_blank" style="color: #667eea; text-decoration: none;">Mixture of Diverse Size Experts</a></div>
-                            <div class="paper-authors">Manxi Sun, Wei Liu, Jian Luan, Pengzhi Gao, Bin Wang</div>
                             <div class="paper-meta">
-                                <span class="badge badge-main">EMNLP 2024</span>
-                                <span class="badge badge-ccf-a">CCF B类</span>
+                                <span class="badge badge-venue">EMNLP 2024</span>
+                                <span class="badge badge-type">CCF B类</span>
                             </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">提出混合不同尺寸专家的策略,通过动态分配不同规模的专家网络处理不同复杂度的任务,在保持计算效率的同时显著提升模型性能,为混合专家模型架构设计提供新思路。</p>
                         </li>
                         <li class="paper-item">
                             <div class="paper-title"><a href="https://arxiv.org/pdf/2508.05128" target="_blank" style="color: #667eea; text-decoration: none;">Attention Basin: Why Contextual Position Matters in Large Language Models</a></div>
-                            <div class="paper-authors">Zihao Yi, Delong Zeng, Zhenqing Ling, Haohao Luo, Zhe Xu, Wei Liu, Jian Luan, Wanxia Cao, Ying Shen</div>
                             <div class="paper-meta">
-                                <span class="badge badge-main">CoRR 2025</span>
+                                <span class="badge badge-venue">CoRR 2025</span>
                             </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">深入分析上下文位置对LLM注意力机制的影响,揭示局部衰减和全局U型模式的形成机制,为优化位置编码和注意力分配提供理论指导。</p>
                         </li>
                     </ul>
                 </div>
+                
                 <!-- 大模型智能体 -->
                 <div class="research-card">
-                    <div class="research-title">大模型智能体</div>
-                    <p style="margin-bottom: 15px; color: #666;">强化学习、GUI Agent、工具调用、RAG</p>
+                    <div class="research-title">大模型智能体 · 全部论文</div>
                     <ul class="paper-list">
-						<li class="paper-item">
+                        <li class="paper-item">
                             <div class="paper-title"><a href="https://aclanthology.org/2025.acl-long.697/" target="_blank" style="color: #667eea; text-decoration: none;">Browsing Like Human: A Multimodal Web Agent with Experiential Fast-and-Slow Thinking</a></div>
-                            <div class="paper-authors">Haohao Luo, Jiayi Kuang, Wei Liu, Ying Shen, Jian Luan, Yang Deng</div>
                             <div class="paper-meta">
-                                <span class="badge badge-main">ACL 2025</span>
-                                <span class="badge badge-ccf-a">CCF A类</span>
+                                <span class="badge badge-venue">ACL 2025</span>
+                                <span class="badge badge-type">CCF A类</span>
                             </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">提出WebExperT框架,模拟人类"快慢思考"的规划过程,利用经验式学习从失败中反思,在MIND2WEB基准测试中表现卓越。</p>
                         </li>
-						<li class="paper-item">
+                        <li class="paper-item">
                             <div class="paper-title"><a href="https://arxiv.org/abs/2504.20199" target="_blank" style="color: #667eea; text-decoration: none;">Weaving Context Across Images: Improving Vision-Language Models through Focus-Centric Visual Chains</a></div>
-                            <div class="paper-authors">Juntian Zhang, Chuanqi cheng, Yuhan Liu, Wei Liu, Jian Luan, Rui Yan</div>
                             <div class="paper-meta">
-                                <span class="badge badge-main">ACL 2025</span>
-                                <span class="badge badge-ccf-a">CCF A类</span>
+                                <span class="badge badge-venue">ACL 2025</span>
+                                <span class="badge badge-type">CCF A类</span>
                             </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">提出以焦点为中心的视觉链机制,通过跨图像编织上下文增强视觉-语言模型的理解能力,显著提升多模态场景下的任务性能。</p>
                         </li>
                         <li class="paper-item">
-                            <div class="paper-title"><a href="https://arxiv.org/abs/2502.02955" target="_blank" style="color: #667eea; text-decoration: none;">ReachAgent: Enhancing Mobile Agent via Page Reaching and Page Operation</a></div>
-                            <div class="paper-authors">Qinzhuo Wu, Wei Liu, Jian Luan, Bin Wang</div>
-                            <div class="paper-meta">
-                                <span class="badge badge-main">NAACL 2025</span>
-                                <span class="badge badge-ccf-a">CCF B类</span>
-                            </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">提出两阶段框架,将手机控制任务拆解为页面到达和页面操作子任务,任务完成率提升4.72%,在AutoUI数据集上超越SOTA。</p>
-                        </li>
-						<li class="paper-item">
-                            <div class="paper-title"><a href="https://arxiv.org/abs/2502.16796" target="_blank" style="color: #667eea; text-decoration: none;">MobileSteward: Integrating Multiple App-Oriented Agents with Self-Evolution to Automate Cross-App Instructions</a></div>
-                            <div class="paper-authors">Yuxuan Liu, Hongda Sun, Wei Liu, Jian Luan, Bo Du, Rui Yan</div>
-                            <div class="paper-meta">
-                                <span class="badge badge-main">KDD 2025</span>
-                                <span class="badge badge-ccf-a">CCF A类</span>
-                            </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">集成多个面向应用的Agent,通过自进化机制实现跨应用指令自动化,显著提升复杂任务执行效率。</p>
-                        </li>
-						<li class="paper-item">
-                            <div class="paper-title"><a href="https://arxiv.org/abs/2505.20660" target="_blank" style="color: #667eea; text-decoration: none;">BacktrackAgent: Enhancing GUI Agent with Error Detection and Backtracking Mechanism</a></div>
-                            <div class="paper-authors">Qinzhuo Wu, Pengzhi Gao, Wei Liu, Jian Luan</div>
-                            <div class="paper-meta">
-                                <span class="badge badge-main">EMNLP 2025</span>
-                                <span class="badge badge-ccf-a">CCF B类</span>
-								<span class="badge badge-reward">Oral</span>
-                            </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">提出错误检测和回溯机制,显著增强GUI智能体的鲁棒性和任务成功率,在复杂图形界面交互场景中表现出色。</p>
-                        </li>
-						<li class="paper-item">
                             <div class="paper-title"><a href="https://aclanthology.org/2025.findings-emnlp.300/" target="_blank" style="color: #667eea; text-decoration: none;">SPO: Self Preference Optimization with Self Regularization</a></div>
-                            <div class="paper-authors">Yuhao Sun, Yifan Zhang, Quandong Wang, Qinzhuo Wu, Wei Liu, Jian Luan</div>
                             <div class="paper-meta">
-                                <span class="badge badge-main">EMNLP 2025</span>
-                                <span class="badge badge-ccf-a">CCF B类</span>
+                                <span class="badge badge-venue">EMNLP 2025</span>
+                                <span class="badge badge-type">CCF B类</span>
                             </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">提出自偏好优化结合自正则化的方法,通过模型自我引导的正则化约束提升偏好对齐效果,减少外部偏好数据需求,优化模型输出质量。</p>
                         </li>
-						<li class="paper-item">
-                            <div class="paper-title"><a href="https://aclanthology.org/2025.emnlp-main.311/" target="_blank" style="color: #667eea; text-decoration: none;">MAKAR: a Multi-Agent framework based Knowledge-Augmented Reasoning for Grounded Multimodal Named Entity Recognition</a></div>
-                            <div class="paper-authors">Xinkui Lin, Yuhui Zhang, Yongxiu Xu, Kun Huang, Hongzhang Mu, Yubin Wang, Gaopeng Gou, Li Qian, Li Peng, Wei Liu, Jian Luan, Hongbo Xu</div>
-                            <div class="paper-meta">
-                                <span class="badge badge-main">EMNLP 2025</span>
-                                <span class="badge badge-ccf-a">CCF B类</span>
-                            </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">提出基于多智能体的知识增强推理框架,通过知识增强提升多模态命名实体识别的准确性,显著增强模型对复杂实体的识别能力。</p>
-                        </li>
-						<li class="paper-item">
-                            <div class="paper-title"><a href="https://arxiv.org/abs/2407.00993" target="_blank" style="color: #667eea; text-decoration: none;">Mobile-Bench: An Evaluation Benchmark for LLM-based Mobile Agents</a></div>
-                            <div class="paper-authors">Shihan Deng, Weikai Xu, Hongda Sun, Wei Liu, Tao Tan, Jianfeng Liu, Ang Li, Jian Luan, Bin Wang, Rui Yan, Shuo Shang</div>
-                            <div class="paper-meta">
-                                <span class="badge badge-main">EMNLP 2025</span>
-                                <span class="badge badge-ccf-a">CCF B类</span>
-                            </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">构建面向移动端LLM智能体的评估基准Mobile-Bench,为移动智能体的性能评估提供标准化测试环境,推动移动AI研究发展。</p>
-                        </li>
-     
                         <li class="paper-item">
-                            <div class="paper-title"><a href="https://arxiv.org/abs/2409.14818" target="_blank" style="color: #667eea; text-decoration: none;">MobileVLM: A Vision-Language Model for Better Intra- and Inter-UI Understanding</a></div>
-                            <div class="paper-authors">Qinzhuo Wu, Weikai Xu, Wei Liu, Tao Tan, Jianfeng Liu, Ang Li, Jian Luan, Bin Wang, Shuo Shang</div>
+                            <div class="paper-title"><a href="https://aclanthology.org/2025.emnlp-main.311/" target="_blank" style="color: #667eea; text-decoration: none;">MAKAR: a Multi-Agent framework based Knowledge-Augmented Reasoning for Grounded Multimodal Named Entity Recognition</a></div>
                             <div class="paper-meta">
-                                <span class="badge badge-main">EMNLP 2024</span>
-                                <span class="badge badge-ccf-a">CCF B类</span>
+                                <span class="badge badge-venue">EMNLP 2025</span>
+                                <span class="badge badge-type">CCF B类</span>
                             </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">构建300万UI页面的Mobile3M数据集,提出增强UI内和UI间理解的预训练任务,在骁龙888 CPU上达到行业领先推理速度。</p>
                         </li>
-						<li class="paper-item">
+                        <li class="paper-item">
                             <div class="paper-title"><a href="https://arxiv.org/abs/2409.14826" target="_blank" style="color: #667eea; text-decoration: none;">ToolPlanner: A Tool Augmented LLM for Multi Granularity Instructions with Path Planning and Feedback</a></div>
-                            <div class="paper-authors">Qinzhuo Wu, Wei Liu, Jian Luan, Bin Wang</div>
                             <div class="paper-meta">
-                                <span class="badge badge-main">EMNLP 2024</span>
-                                <span class="badge badge-ccf-a">CCF B类</span>
+                                <span class="badge badge-venue">EMNLP 2024</span>
+                                <span class="badge badge-type">CCF B类</span>
                             </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">提出路径规划和反馈机制增强的工具增强LLM框架,有效处理多粒度指令,显著提升工具调用的准确性和效率。</p>
                         </li>
-						<li class="paper-item">
-                            <div class="paper-title"><a href="https://arxiv.org/abs/2502.02481" target="_blank" style="color: #667eea; text-decoration: none;">Multilingual Machine Translation with Open Large Language Models at Practical Scale: An Empirical Study</a></div>
-                            <div class="paper-authors">Qinzhuo Wu, Weikai Xu, Wei Liu, Tao Tan, Jianfeng Liu, Ang Li, Jian Luan, Bin Wang, Shuo Shang</div>
-                            <div class="paper-meta">
-                                <span class="badge badge-main">NAACL 2025</span>
-                                <span class="badge badge-ccf-a">CCF B类</span>
-                            </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">对开放大语言模型在实用规模下的多语言机器翻译能力进行实证研究,提出并行优先单语言次级(PFMS)数据混合策略,显著提升多语言翻译性能。</p>
-                        </li>
-                        
-                        
                         <li class="paper-item">
                             <div class="paper-title"><a href="https://arxiv.org/abs/2403.06551" target="_blank" style="color: #667eea; text-decoration: none;">ToolRerank: Adaptive and Hierarchy-Aware Reranking for Tool Retrieval</a></div>
-                            <div class="paper-authors">Yuanhang Zheng, Peng Li, Wei Liu, Yang Liu, Jian Luan, Bin Wang</div>
                             <div class="paper-meta">
-                                <span class="badge badge-main">LREC/COLING 2024</span>
-								<span class="badge badge-ccf-a">CCF B类</span>
+                                <span class="badge badge-venue">LREC/COLING 2024</span>
+                                <span class="badge badge-type">CCF B类</span>
                             </div>
-                            <p style="margin-top: 8px; font-size: 0.9em; color: #666; line-height: 1.5;">提出自适应且层次感知的工具重排序方法,显著提升工具检索的准确性和效率。</p>
                         </li>
                     </ul>
-                </div>
-        <!-- Technical Insights -->
-        <div class="section">
-            <h2 class="section-title">💡 技术洞察与演讲</h2>
-
-            <div class="insight-card">
-                <div class="insight-title">
-                    🎤 学术与产业会议
-                </div>
-                <div class="insight-content">
-                    <ul>
-                        <li style="margin-bottom: 15px;">
-                            <strong><a href="https://blog.csdn.net/pengzhouzhou/article/details/139371743" target="_blank" style="color: #333;">YEF2024 "大模型时代AI Agent的挑战、优化与落地之道" 技术论坛</a></strong>
-                            <br><span style="font-size: 0.9em; color: #666;">2024年5月 | 宁波 | 执行主席</span>
-                            <p style="margin-top: 8px; font-size: 0.85em; color: #666; line-height: 1.6;">担任CCF青年精英大会(YEF2024)AI Agent论坛执行主席,组织"大模型时代AI Agent的挑战、优化与落地之道"技术论坛。作为执行主席致开场词,并发表《智能手机+AI Agent的行业思考与技术挑战》主题演讲,探讨大模型驱动的AI Agent和智能手机结合的未来形态、技术挑战和解决方案。</p>
-                        </li>
-						<li style="margin-bottom: 15px;">
-                            <strong><a href="https://www.ccf.org.cn/Focus/2024-05-30/823307.shtml" target="_blank" style="color: #333;">CCF第四届优秀大学生学术秀 评审专家</a></strong>
-                            <br><span style="font-size: 0.9em; color: #666;">2024年5月 | 宁波</span>
-                            <p style="margin-top: 8px; font-size: 0.85em; color: #666; line-height: 1.6;">担任CCF优秀大学生学术秀评审专家,为计算机科学领域大学生打造学术交流展示的平台,为行业前沿科技发展提供新风向标。</p>
-                        </li>
-                        <li style="margin-bottom: 15px;">
-                            <strong><a href="https://www.ccf.org.cn/Focus/2024-05-15/822074.shtml" target="_blank" style="color: #333;">CCF YEF学术秀活动 特邀评委</a></strong>
-                            <br><span style="font-size: 0.9em; color: #666;">2024年5月 | 宁波</span>
-                            <p style="margin-top: 8px; font-size: 0.85em; color: #666; line-height: 1.6;">作为14位资深专家之一,担任CCF YEF学术秀特邀评委,参与评审来自CCF全国各地的11个CCF学生分会的14名参赛选手的学术秀演讲。</p>
-                        </li>
-                        <li style="margin-bottom: 15px;">
-                            <strong><a href="https://www.ccf.org.cn/YOCSEF/News/2024-03-13/814227.shtml" target="_blank" style="color: #333;">CCF YOCSEF武汉"大模型技术机遇与挑战" 技术论坛</a></strong>
-                            <br><span style="font-size: 0.9em; color: #666;">2024年3月 | 武汉 | 分享嘉宾</span>
-                            <p style="margin-top: 8px; font-size: 0.85em; color: #666; line-height: 1.6;">受邀参加CCF YOCSEF武汉技术论坛,参与思辨环节讨论。指出通用大模型与垂直领域大模型的知识分布存在显著差异,通用大模型能够通过迁移等技术实现多种小模型的聚合。从商业实践的角度探讨开源与闭源大模型的发展趋势,认为从长远来看,开源大模型将会成为主流。</p>
-                        </li>
-                        <li style="margin-bottom: 15px;">
-                            <strong><a href="http://ai.ruc.edu.cn/newslist/newsdetail/20231120004.html" target="_blank" style="color: #333;">中国人民大学"大模型：前沿技术与未来应用"论坛 论坛</a></strong>
-                            <br><span style="font-size: 0.9em; color: #666;">2023年11月 | 北京 | 分享嘉宾</span>
-                            <p style="margin-top: 8px; font-size: 0.85em; color: #666; line-height: 1.6;">发表《小米大模型思考和实践》主题报告,重点介绍小米在大型语言模型领域的最新进展和实践经验。从"大语言模型是什么"开始,深入解释大语言模型的定义、特点以及在不同类型任务中的应用,特别强调大模型在参数规模、多任务和应用方面的重要性。</p>
-                        </li>
-                        <li style="margin-bottom: 15px;">
-                            <strong><a href="http://news.qq.com/rain/a/20230903A07E8500" target="_blank" style="color: #333;">粤港澳大湾区人工智能行业发展技术论坛</a></strong>
-                            <br><span style="font-size: 0.9em; color: #666;">2023年9月 | 深圳 | 分享嘉宾</span>
-                            <p style="margin-top: 8px; font-size: 0.85em; color: #666; line-height: 1.6;">发表《小米AI实验室：小米AI战略的实践者》主题分享,介绍小米一系列重磅产品和技术的亮相,充分展现小米近年来在科技引领、审美引领上的认识与能力升级,以及在关键技术领域的全方位突破。</p>
-                        </li>
-                        <li style="margin-bottom: 15px;">
-                            <strong><a href="https://blog.csdn.net/pengzhouzhou/article/details/132463396" target="_blank" style="color: #333;">CSDN专访：小米大模型,重铸AI能力新范式</a></strong>
-                            <br><span style="font-size: 0.9em; color: #666;">2023年8月</span>
-                            <p style="margin-top: 8px; font-size: 0.85em; color: #666; line-height: 1.6;">接受CSDN专访,分享小米大模型的"轻量化、本地部署"战略。介绍小米60亿参数的自研大模型在C-EVAL权威榜单上取得同参数量级排名第一,在CMMLU中文向大模型取得排名第一的成绩。</p>
-                        </li>
-						<li style="margin-bottom: 15px;">
-                            <strong><a href="https://www.ccf.org.cn/YOCSEF/Branches/Qingdao/News/2023-03-04/786819.shtml" target="_blank" style="color: #333;">CCF YOCSEF 青岛 “迈向情感智能的多模态交互技术” 技术论坛</a></strong>
-                            <br><span style="font-size: 0.9em; color: #666;">2023年8月</span>
-                            <p style="margin-top: 8px; font-size: 0.85em; color: #666; line-height: 1.6;">以 “小爱同学情感对话实践” 为主题，分享小米在情绪感知、共情对话、心理陪伴方向的技术落地</p>
-                        </li>
-						
-                    </ul>
-
                 </div>
             </div>
         </div>
-    <!-- Footer -->
-    <div class="footer">
-        <div class="container">
-            <p>&copy; 2026 刘伟. All rights reserved.</p>
-            <p style="margin-top: 10px; opacity: 0.7;">专注大语言模型与AI Agent技术研究和应用</p>
+
+        <!-- Speaking & Engagement -->
+        <div class="section">
+            <h2 class="section-title">🎤 技术洞察与演讲</h2>
+            <div class="speaking-list">
+
+                <div class="speaking-item">
+                    <div class="speaking-header">
+                        <div class="speaking-title">
+                            <a href="https://blog.csdn.net/pengzhouzhou/article/details/139371743" target="_blank">"大模型时代AI Agent的挑战、优化与落地之道"技术论坛</a>
+                        </div>
+                        <div class="speaking-meta">
+                            <span class="speaking-role">执行主席</span>
+                            <span class="speaking-venue">YEF2024 · 宁波</span>
+                        </div>
+                    </div>
+                    <div class="speaking-desc">
+                        担任CCF青年精英大会（YEF2024）AI Agent论坛执行主席，组织"大模型时代AI Agent的挑战、优化与落地之道"技术论坛。作为执行主席致开场词，并发表《智能手机+AI Agent的行业思考与技术挑战》主题演讲，探讨大模型驱动的AI Agent和智能手机结合的未来形态、技术挑战和解决方案。
+                    </div>
+                </div>
+
+                <div class="speaking-item">
+                    <div class="speaking-header">
+                        <div class="speaking-title">
+                            <a href="http://ai.ruc.edu.cn/newslist/newsdetail/20231120004.html" target="_blank">"大模型：前沿技术与未来应用"论坛</a>
+                        </div>
+                        <div class="speaking-meta">
+                            <span class="speaking-role">分享嘉宾</span>
+                            <span class="speaking-venue">中国人民大学 · 北京</span>
+                        </div>
+                    </div>
+                    <div class="speaking-desc">
+                        发表《小米大模型思考和实践》主题报告，重点介绍小米在大型语言模型领域的最新进展和实践经验。从"大语言模型是什么"开始，深入解释大语言模型的定义、特点以及在不同类型任务中的应用，特别强调大模型在参数规模、多任务和应用方面的重要性。
+                    </div>
+                </div>
+
+                <div class="speaking-item">
+                    <div class="speaking-header">
+                        <div class="speaking-title">
+                            <a href="https://blog.csdn.net/pengzhouzhou/article/details/132463396" target="_blank">CSDN专访：小米大模型，重铸AI能力新范式</a>
+                        </div>
+                        <div class="speaking-meta">
+                            <span class="speaking-role">专访嘉宾</span>
+                            <span class="speaking-venue">2023年8月</span>
+                        </div>
+                    </div>
+                    <div class="speaking-desc">
+                        接受CSDN专访，分享小米大模型的"轻量化、本地部署"战略。介绍小米60亿参数的自研大模型在C-EVAL权威榜单上取得同参数量级排名第一，在CMMLU中文向大模型取得排名第一的成绩。
+                    </div>
+                </div>
+
+                <div class="speaking-item">
+                    <div class="speaking-header">
+                        <div class="speaking-title">
+                            <a href="http://news.qq.com/rain/a/20230903A07E8500" target="_blank">粤港澳大湾区人工智能行业发展技术论坛</a>
+                        </div>
+                        <div class="speaking-meta">
+                            <span class="speaking-role">分享嘉宾</span>
+                            <span class="speaking-venue">深圳 · 2023年9月</span>
+                        </div>
+                    </div>
+                    <div class="speaking-desc">
+                        发表《小米AI实验室：小米AI战略的实践者》主题分享，介绍小米一系列重磅产品和技术的亮相，充分展现小米近年来在科技引领、审美引领上的认识与能力升级，以及在关键技术领域的全方位突破。
+                    </div>
+                </div>
+
+                <div class="speaking-item">
+                    <div class="speaking-header">
+                        <div class="speaking-title">
+                            <a href="https://www.ccf.org.cn/YOCSEF/Branches/Qingdao/News/2023-03-04/786819.shtml" target="_blank">"迈向情感智能的多模态交互技术"技术论坛</a>
+                        </div>
+                        <div class="speaking-meta">
+                            <span class="speaking-role">分享嘉宾</span>
+                            <span class="speaking-venue">CCF YOCSEF 青岛</span>
+                        </div>
+                    </div>
+                    <div class="speaking-desc">
+                        以"小爱同学情感对话实践"为主题，分享小米在情绪感知、共情对话、心理陪伴方向的技术落地，展示对话系统在实际产品中的应用价值。
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 刘伟 | 大语言模型与AI Agent技术负责人</p>
+            <p style="margin-top: 10px; font-size: 0.9em; color: #999;">从对话系统到LLM，专注让AI真正理解并服务用户</p>
         </div>
     </div>
+
 </body>
 </html>
